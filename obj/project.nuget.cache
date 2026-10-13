@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "DeRghfsyIBI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\fredr\\salt\\precourse\\webapiDotNetTrainingGround\\webapiDotNetTrainingGround.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fredr\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.12\\microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
+    "C:\\Users\\fredr\\.nuget\\packages\\microsoft.openapi\\2.12.0\\microsoft.openapi.2.12.0.nupkg.sha512"
+  ],
+  "logs": []
+}
