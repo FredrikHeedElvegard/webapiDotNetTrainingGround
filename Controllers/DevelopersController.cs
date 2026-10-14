@@ -8,35 +8,36 @@ namespace webapiDotNetTrainingGround.Controllers;
 [Route("/api/[controller]")]
 public class DevelopersController : ControllerBase
 {
-    List<Developer> _db;
+    Db _db;
 
-    public DevelopersController()
+    public DevelopersController(Db db)
     {
-        _db = new() { new Developer() { Id = 0, Name = "Gustaf", Email = "Gustaf@HUUHUH.com" } };
+        _db = db;
     }
 
     [HttpGet]
     [EndpointName("GetAllDevelopers")]
     public List<Developer> GetAllDevelopers()
     {
-        return _db;
+        return _db.Developers;
     }
 
     [HttpGet("{id}")]
     public Developer? GetDeveloperByID(int id)
     {
-        return _db.Find(x => x.Id == id);
+        return _db.Developers.Find(x => x.Id == id);
     }
 
 
     [HttpPost]
     public IActionResult CreateDeveloper(Developer developerToAdd)
     {
-        var nextId = _db.Count;
+        var nextId = _db.Developers.Count;
         developerToAdd.Id = nextId;
-        _db.Add(developerToAdd);
+        _db.Developers.Add(developerToAdd);
 
-        return CreatedAtAction(nameof(GetDeveloperByID), new { id= nextId}, developerToAdd);
+        return CreatedAtAction(nameof(GetDeveloperByID), new { id = nextId }, developerToAdd);
     }
 
 }
+
